@@ -1,5 +1,5 @@
 # capgemini
-Resoluções questões Desafio de Programação
+Resoluções das questões do Desafio de Programação.
 
 Foi usado a linguagem Java (JDK 11.0.12) para a resolução das questões e a IDE Eclipse for Entrerprise Java and Web Developers.
 
