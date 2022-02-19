@@ -17,18 +17,18 @@ public class anagrama {
         int tamStr = str.length();
         int cont = 0;
         
-        for (int i = 0; i < tamStr; i++) {
+        for (int i = 0; i < tamStr; i++) {                         //laço para capturar as substrings e adicionar na lista.
         	for (int letra = 1; letra <= tamStr-i; letra++) {
         		String subStr = str.substring(i, i+letra);
         		lista.add(subStr);
             }
         }
-        for (int i = 0; i < lista.size(); i++) {
+        for (int i = 0; i < lista.size(); i++) {                   //laço para verificar se as substrings capturadas são anagramas.
         	String elemento = lista.get(i);
         	for (int j = i+1; j < lista.size(); j++) {
         		if(eAnagrama(lista.get(j), elemento)){
-        			cont++;
-        		}
+        			cont++;										   //no nosso caso é o contador que interessa, pois ele que irá contar quantos
+        		}                                                  //anagramas tem a string digitada.
         	}
         }
          

@@ -18,50 +18,100 @@ public class senhaSegura {
         else{
             System.out.println("Tamanho minimo: ok");
         }
+          
+       //Pelo que entendi no enunciado, poderia finalizar aqui.
+       //No entanto preferi fazer o exercício completo conforme segue.
+    
+        teclado.close();
         
-        //Pelo que entendi no enunciado, poderia finalizar aqui.
-        //No entanto preferi fazer o exercício completo conforme segue.
         
+        if(verificarMaiuscula(senha) == false) {
+        	System.out.println("Falta pelo menos uma letra maiuscula.");
+        }
+        
+        if(verificarMinuscula(senha) == false) {
+        	System.out.println("Falta pelo menos uma letra minuscula.");
+        }
+        
+        if(verificarDigito(senha) == false) {
+        	System.out.println("Falta pelo menos um numero.");
+        }
+        
+        if(verificarEspecial(senha) == false) {
+        	System.out.println("Falta pelo menos um caracter especial.");
+        }
+        
+        if(verificarTamanho(senha) && verificarMaiuscula(senha) && verificarMinuscula(senha) && verificarDigito(senha) 
+        		&& verificarEspecial(senha)) {
+        	System.out.println("Senha forte!");
+        }
+    }
+	
+	public static boolean verificarTamanho(String senha) {
+		if (senha.length() >= 6) {
+			return true;
+		}
+		else {
+        	return false;
+        }
+	}
+        
+    public static boolean verificarMaiuscula(String senha) { 
+    	
+    	char c;
         boolean maiuscula = false;
-        boolean minuscula = false;
-        boolean digito = false;
-        boolean especial = false;
-        
-        char c;
-        
-        for(int i = 0; i< senha.length(); i++){
+    	
+        for(int i = 0; i< senha.length(); i++){                
             c = senha.charAt(i);
             if(Character.isUpperCase(c)){
                 maiuscula = true;
             }
-            else if(Character.isLowerCase(c)){
+        }
+		return maiuscula;
+    }
+    
+    public static boolean verificarMinuscula(String senha) { 
+    	
+    	char c;
+    	boolean minuscula = false;
+        
+        for(int i = 0; i< senha.length(); i++){                
+            c = senha.charAt(i);
+            if(Character.isLowerCase(c)){
                 minuscula = true;
             }
-            else if(Character.isDigit(c)){
+        }
+		return minuscula;
+    }
+    
+    public static boolean verificarDigito(String senha) { 
+    	
+    	boolean digito = false;
+    	char c;
+        
+        for(int i = 0; i< senha.length(); i++){                
+            c = senha.charAt(i);
+            if(Character.isDigit(c)){
                 digito = true;
-            }
-            else { 
-                especial = true;
             }
         }
         
-        if( maiuscula == false){
-            System.out.println("Falta pelo menos uma letra maiuscula.");
-        }
-        if( minuscula == false){
-            System.out.println("falta pelo menos uma letra minuscula.");
-        }
-        if( digito == false){
-            System.out.println("Falta pelo menos um numero.");
-        }
-        if( especial == false){
-            System.out.println("Falta pelo menos um caracter especial");
-        }
-        if(maiuscula == true & minuscula == true & digito == true & especial == true) { 
-            System.out.println("Senha Forte");
-        }
-    
-        teclado.close();
+        return digito;
     }
-
+ 
+ 	public static boolean verificarEspecial(String senha) { 
+ 	
+ 		boolean especial = false;
+ 		char c;
+     
+ 		for(int i = 0; i< senha.length(); i++){                
+ 			c =  senha.charAt(i);
+ 			if(!Character.isLetterOrDigit(c)) {
+ 				especial = true;
+ 			}
+ 		}
+ 		
+ 		return especial;
+ 	}
+    	
 }
