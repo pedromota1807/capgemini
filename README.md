@@ -13,6 +13,8 @@ Ou compilá-los através de um terminal (console) com o comando:
  
  javac anagrama.java
 
+
+
 Para executar use o comando:
 
  java escadaDeAsteriscos
@@ -20,5 +22,7 @@ Para executar use o comando:
  java senhaSegura
  
  java anagrama
+ 
+ 
  
 No diretório Testes estão os testes das 3 questões.
